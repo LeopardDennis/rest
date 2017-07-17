@@ -19,6 +19,16 @@ class REST
     private $_header = [];
     private $_client;
 
+    private static $_RESTs = [];
+
+    public static function of($name, $cookie = null, $header = []) {
+        if (!self::$_RESTs[$name]) {
+            $conf = \Gini\Config::get('app.rest');
+            $rest = IoC::construct('\Gini\REST', $conf[$name]['url'], $conf[$name]['path'], $header, $conf[$name]['version'], $name);
+            self::$_RESTs[$name] = $rest;
+        }
+        return self::$_RESTs[$name];
+    }
 
     public function __construct($url, $path = null, $header = [], $version = null, $name = null)
     {
