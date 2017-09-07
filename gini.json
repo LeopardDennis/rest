@@ -2,7 +2,7 @@
     "id": "rest",
     "name": "REST",
     "description": "RESTful",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "dependencies": [],
     "composer": {
         "require": {
