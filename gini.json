@@ -3,5 +3,10 @@
     "name": "REST",
     "description": "RESTful",
     "version": "0.2.0",
-    "dependencies": []
+    "dependencies": [],
+    "composer": {
+        "require": {
+            "guzzlehttp/guzzle": "^6.2"
+        }
+    }
 }
